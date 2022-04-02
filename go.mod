@@ -1,4 +1,4 @@
-module github.com/LogeshVel/todo
+module todo
 
 go 1.17
 

@@ -6,3 +6,7 @@ var RootCmd = &cobra.Command{
 	Use:   "todo",
 	Short: "todo is a CLI To-Do list manager",
 }
+
+func init() {
+	RootCmd.CompletionOptions.DisableDefaultCmd = true
+}
