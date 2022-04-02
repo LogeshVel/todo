@@ -1,6 +1,6 @@
 package main
 
-import "github.com/LogeshVel/todo/cmd"
+import "todo/cmd"
 
 func main() {
 	cmd.RootCmd.Execute()
