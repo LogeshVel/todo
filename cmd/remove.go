@@ -11,9 +11,15 @@ import (
 
 var removeCmd = &cobra.Command{
 	Use:   "rm",
-	Short: "Remove the task from your task list.",
+	Short: "Remove the task from your to-do list.",
+	Example: `
+	todo rm 1 2
+		- here 1 and 2 are the Task number of the active task"
+	todo rm 3
+		- here 3 is the Task number of the active task"
+	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		tasks_map, err := todo_db.AllTasks()
+		tasks_map, err := todo_db.Get_active_task()
 		if err != nil {
 			fmt.Println("Something went wrong:", err)
 			os.Exit(1)
@@ -25,9 +31,9 @@ var removeCmd = &cobra.Command{
 				continue
 			}
 			if task_value, found := tasks_map[task_no]; found {
-				d_err := todo_db.DeleteTask(task_value.Key)
+				d_err := todo_db.Remove_task(task_value.Key, task_value.Value)
 				if d_err != nil {
-					fmt.Println("Something went wrong :( while deleting the Task number :", task_no, d_err.Error())
+					fmt.Println("Something went wrong :( while removing the Task number :", task_no, d_err.Error())
 					continue
 
 				}
@@ -39,7 +45,7 @@ var removeCmd = &cobra.Command{
 			}
 
 		}
-		Display_all_task()
+		Display_all_active_task()
 	},
 }
 
