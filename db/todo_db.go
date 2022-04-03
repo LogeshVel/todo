@@ -49,7 +49,6 @@ func AddTask(task string) (int, error) {
 
 func get_tasks(tag string) (map[int]Task, error) {
 	// tag can be "$actv" or "$remv" or "$done"
-	var tasks_map = map[int]Task{}
 	var tasks_map_to_display = map[int]Task{}
 	err := db.View(func(tx *bolt.Tx) error {
 		b := tx.Bucket(taskBucket)
@@ -61,11 +60,6 @@ func get_tasks(tag string) (map[int]Task, error) {
 			if t_v[len(t_v)-5:] != tag {
 				continue
 			}
-			t_add := Task{
-				Key:   t_k,
-				Value: t_v,
-			}
-			tasks_map[idx] = t_add
 			tasks_map_to_display[idx] = Task{
 				Key:   t_k,
 				Value: t_v[:len(t_v)-5],
@@ -77,7 +71,6 @@ func get_tasks(tag string) (map[int]Task, error) {
 	if err != nil {
 		return nil, err
 	}
-	// fmt.Printf("All tasks (%s) : %v\n", tag, tasks_map)
 	return tasks_map_to_display, nil
 }
 
