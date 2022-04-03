@@ -17,7 +17,7 @@ type Task struct {
 
 func InitDB(dbpath string) error {
 	var err error
-	db, err = bolt.Open("my.db", 0600, &bolt.Options{Timeout: 1 * time.Second})
+	db, err = bolt.Open(dbpath, 0600, &bolt.Options{Timeout: 1 * time.Second})
 	if err != nil {
 		return err
 	}
