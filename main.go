@@ -12,7 +12,8 @@ import (
 
 func main() {
 	home, _ := homedir.Dir()
-	dbpath := filepath.Join(home, "tasks.db")
+	dbpath := filepath.Join(home, "todo.db")
+	// fmt.Println("The DB path is ", dbpath)
 	shouldbe(todo_db.InitDB(dbpath))
 	shouldbe(cmd.RootCmd.Execute())
 }
