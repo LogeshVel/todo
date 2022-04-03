@@ -9,13 +9,13 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var doneCmd = &cobra.Command{
-	Use:   "done",
-	Short: "Marks the task as done/completed",
+var deleteCmd = &cobra.Command{
+	Use:   "del",
+	Short: "Permanently remove/delete the task from your task list.",
 	Example: `
-	todo done 1 2
+	todo del 1 2
 		- here 1 and 2 are the Task number of the active task"
-	todo done 3
+	todo del 3
 		- here 3 is the Task number of the active task"
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
@@ -30,25 +30,25 @@ var doneCmd = &cobra.Command{
 				fmt.Println("Could not understand the arg:", t)
 				continue
 			}
-
 			if task_value, found := tasks_map[task_no]; found {
-				d_err := todo_db.Done_task(task_value.Key, task_value.Value)
+				d_err := todo_db.DeleteTask(task_value.Key)
 				if d_err != nil {
-					fmt.Println("Something went wrong :( while marking the Task number :", task_no, "as done", d_err)
+					fmt.Println("Something went wrong :( while deleting the Task number :", task_no, d_err.Error())
 					continue
 
 				}
-				fmt.Printf("Task \"%d. %s\" is marked as Done and removed from your To-Do list\n", task_no, task_value.Value)
-				// fmt.Println("Task number", task_no, ": '", task_value.Value, "'", "is marked as Done and removed from the To-Do list")
+				fmt.Printf("Task \"%d. %s\" is permanently deleted from your To-Do list\n", task_no, task_value.Value)
+				// fmt.Println("Task number", task_no, "is removed from the list")
 				continue
 			} else {
 				fmt.Println("The Task number", task_no, "does not exists")
 			}
+
 		}
 		Display_all_active_task()
 	},
 }
 
 func init() {
-	RootCmd.AddCommand(doneCmd)
+	RootCmd.AddCommand(deleteCmd)
 }
