@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 	"sort"
-	"todo/colors"
 	todo_db "todo/db"
 
+	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 )
 
@@ -69,8 +69,7 @@ func Display_all_active_task() {
 	}
 	sort.Ints(keys)
 	fmt.Println("\nYou have the following tasks in your to-do list:")
-	fmt.Printf(string(colors.ColorPurple))
-	fmt.Println("Task No. Task", string(colors.ColorReset))
+	color.Magenta("Task No. Task")
 	for _, sorted_key := range keys {
 		fmt.Printf("      %d. %s\n", sorted_key, tasks[sorted_key].Value)
 	}
@@ -92,8 +91,7 @@ func Display_all_removed_task() {
 	}
 	sort.Ints(keys)
 	fmt.Println("\nYou have removed the following tasks from your to-do list:")
-	fmt.Printf(string(colors.ColorRed))
-	fmt.Println("Task No. Task", string(colors.ColorReset))
+	color.Red("Task No. Task")
 	for _, sorted_key := range keys {
 		fmt.Printf("      %d. %s\n", sorted_key, tasks[sorted_key].Value)
 	}
@@ -115,8 +113,7 @@ func Display_all_done_task() {
 	}
 	sort.Ints(keys)
 	fmt.Println("\nYou have Done the following tasks in your to-do list:")
-	fmt.Printf(string(colors.ColorGreen))
-	fmt.Println("Task No. Task", string(colors.ColorReset))
+	color.Green("Task No. Task")
 	for _, sorted_key := range keys {
 		fmt.Printf("      %d. %s\n", sorted_key, tasks[sorted_key].Value)
 	}
