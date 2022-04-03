@@ -22,38 +22,45 @@ todo is an Golang CLI To-Do list manager
 
 
 
-####todo list -adr
+#### todo list -adr
 
 You have the following tasks in your to-do list:
+
 Task No. Task
       1. 11112222333354444
       2. 11112222333354444555555
 
 You have removed the following tasks from your to-do list:
+
 Task No. Task
       1. 1111
 
 You have Done the following tasks in your to-do list:
+
 Task No. Task
       1. 11112222
 
-####todo del 2
+#### todo del 2
 Task "2. 11112222333354444555555" is permanently deleted from your To-Do list
 
 You have the following tasks in your to-do list:
+
 Task No. Task
       1. 11112222333354444
                                                                                                                                         
-####todo list -adr
+#### todo list -adr
 
 You have the following tasks in your to-do list:
+
 Task No. Task
       1. 11112222333354444
 
 You have removed the following tasks from your to-do list:
+
 Task No. Task
       1. 1111
 
 You have Done the following tasks in your to-do list:
+
 Task No. Task
       1. 11112222
