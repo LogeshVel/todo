@@ -14,9 +14,9 @@ var deleteCmd = &cobra.Command{
 	Short: "Permanently remove/delete the task from your task list.",
 	Example: `
 	todo del 1 2
-		- here 1 and 2 are the Task number of the active task"
+		- here 1 and 2 are the Task number of the active task
 	todo del 3
-		- here 3 is the Task number of the active task"
+		- here 3 is the Task number of the active task
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
 		tasks_map, err := todo_db.Get_active_task()
