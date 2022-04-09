@@ -55,23 +55,6 @@ shows the active tasks in the list
 _3 lists can be displayed by **todo list -dra** command_
 
 
-#### todo del
-
-```
-Permanently remove/delete the task from your task list.
-
-Usage:
-  todo del [flags]
-
-Examples:
-
-        todo del 1 2
-                - here 1 and 2 are the Task number of the active task
-        todo del 3
-                - here 3 is the Task number of the active task
-
-```
-
 ## todo done
 
 ```
@@ -85,6 +68,22 @@ Examples:
         todo done 1 2
                 - here 1 and 2 are the Task number of the active task
         todo done 3
+                - here 3 is the Task number of the active task
+```
+
+## todo rm
+
+```
+Remove the task from your to-do list.
+
+Usage:
+  todo rm [flags]
+
+Examples:
+
+        todo rm 1 2
+                - here 1 and 2 are the Task number of the active task
+        todo rm 3
                 - here 3 is the Task number of the active task
 ```
 
@@ -110,19 +109,20 @@ Available Commands:
   rm          Clears the removed tasks list
 ```
 
-## todo rm
+
+## todo del
 
 ```
-Remove the task from your to-do list.
+Permanently remove/delete the task from your task list.
 
 Usage:
-  todo rm [flags]
+  todo del [flags]
 
 Examples:
 
-        todo rm 1 2
+        todo del 1 2
                 - here 1 and 2 are the Task number of the active task
-        todo rm 3
+        todo del 3
                 - here 3 is the Task number of the active task
-```
 
+```
