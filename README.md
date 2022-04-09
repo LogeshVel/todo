@@ -41,14 +41,17 @@ Examples:
 
 shows the active tasks in the list
 
-# There are 3 lists in the to-do app
+### There are 3 lists in the to-do app
 
 - active tasks list
+
       - can be listed by **todo list** or **todo list -a** commands
 -  done tasks list
+
       - can be listed by **todo list -d** command
       - done tasks list contains the list of tasks that are marked as done
 - removed tasks list
+
       - can be listed by **todo list -r**
       - removed tasks list contains the list of tasks that are marked as removed
 
