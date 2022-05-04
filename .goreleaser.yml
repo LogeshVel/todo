@@ -1,0 +1,16 @@
+builds:
+  - binary: todo
+    goos:
+      - windows
+      - linux
+    goarch:
+      - amd64
+      - arm64
+    env:
+      - CGO_ENABLED=0
+
+release:
+  prerelease: auto
+
+checksum:
+  name_template: 'checksums.txt'

@@ -1,3 +1,33 @@
+
+## Installation
+
+Download the zip file corresponding to your OS in the release page. As of now the **todo** app supports only for Linux and Windows.
+
+After downloading, extract the zip file using the below cmd
+
+```
+tar -zxvf filename.tar.gz
+```
+
+After unzipping execute the following cmd in the same dir where the files have been extracted.
+
+In Windows, open the command prompt with the administrative privilege (Run as Administrator)
+
+```
+move todo.exe "%ProgramFiles%"
+
+setx Path “%Path%;%ProgramFiles%”
+```
+
+For Windows after executing the above cmds, close the existing cmd prompt and open new one to use the **todo** app
+
+In Linux
+
+```
+mv todo /usr/local/bin
+```
+
+
 ## todo
 
 ```
