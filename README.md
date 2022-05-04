@@ -24,7 +24,7 @@ For Windows after executing the above cmds, close the existing cmd prompt and op
 In Linux
 
 ```
-mv todo /usr/local/bin
+sudo mv todo /usr/local/bin
 ```
 
 
