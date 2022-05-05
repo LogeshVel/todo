@@ -14,9 +14,7 @@ After unzipping execute the following cmd in the same dir where the files have b
 In Windows, open the command prompt with the administrative privilege (Run as Administrator)
 
 ```
-move todo.exe "%ProgramFiles%"
-
-setx Path “%Path%;%ProgramFiles%”
+move todo.exe "C:/WINDOWS"
 ```
 
 For Windows after executing the above cmds, close the existing cmd prompt and open new one to use the **todo** app
